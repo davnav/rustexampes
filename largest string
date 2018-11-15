@@ -1,0 +1,22 @@
+//a' = lifetime for x , y  and return value
+// calling the largest function with passing string references
+
+fn largest<'a>(x:&'a str,y:&'a str) -> &'a str {
+        if x.len() > y.len(){
+                x
+        }else{
+                y
+        }
+}
+
+fn main(){
+        let string1 = String::from("xyz");
+        let string2 = "xyshdds";
+//call the function :largest , with string1 parameter is stored in heap, so get slice str pointer using "as_str()" and then pass as first 
+//parameter
+
+        let str1 = largest(string1.as_str(),string2);
+
+        println!("{}",str1);
+}
+~                
